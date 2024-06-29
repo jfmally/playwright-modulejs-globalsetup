@@ -15,7 +15,7 @@ import 'dotenv/config'
 export default defineConfig({
   testDir: './tests',
   /* Get absolute pathname to global setup module */
-  globalSetup: pathToFileURL('./global.setup.mjs').pathname,
+  globalSetup: pathToFileURL('./global.setup.js').pathname,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
