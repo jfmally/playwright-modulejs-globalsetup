@@ -1,27 +1,32 @@
-# Evinced Playwright JS SDK Example — ESM with globalSetup auth
+# Playwright JS SDK example — globalSetup auth with JavaScript modules
 
-Illustrates SDK usage with ECMAScript modules and globalSetup SDK authorization.
+Playwright JS supports a Node environment using ECMAScript (JavaScript) modules.
+This example illustrates Evinced SDK usage in that context with authorization in
+a globalSetup module.
 
 ## Using ECMAScript modules with Playwright JS
 
 Playwright JS loads files as ECMAScript modules if the file extension is `.mjs`
 or if package.json has `"type": "module"` set, otherwise `.js` files are loaded
 as CommonJS modules. (Files with extension `.cjs` are always loaded as CommonJS
-modules. A common source of confusion is the following statement:
+modules.) In this example, package.json sets `"type": "module"`.
 
-```
-import { aName } from 'some-module';
-```
-
-In CommonJS context, `{ aName }` is interpreted as object destructuing, while in
-ECMAScript context, it is not — `aName` must be an explicitly named export in
-`some-module`. For reliable loading of JavaScript modules, use the `.mjs`
-extension or set type `module` in package.json.
+> **Note:** A common source of confusion is the following statement:
+>
+> ```
+> import { aName } from 'some-module';
+> ```
+>
+> In CommonJS context, `{ aName }` is interpreted as object destructuing, but it
+> is not in ECMAScript context — `aName` must be an explicitly named export in
+> `some-module`. For reliable loading of ECMAScript modules, use the `.mjs`
+> extension or set `"type": "module"` in package.json. This example does the
+> latter.
 
 ## Authorization
 
-Evinced SDK requires a Service ID and an API Key when used with Playwright JS.
-Licensed users can obtain those from
+Evinced Playwright JS SDK requires a Service ID and an API Key. Licensed users
+can obtain those from
 [Evinced Product Hub - Web SDK](https://hub.evinced.com/web-sdk) and should set
 them in their enviornment or in a `.env` file in the project directory before
 running tests.
@@ -34,7 +39,7 @@ EVINCED_API_KEY
 ## Installation
 
 A local copy of Evinced SDK must be available as a gzipped tar file. Run NPM or
-the package manager of your choice (yarn, pnpm) to install it along with the
+the package manager of your choice (yarn, pnpm) to install it along with all
 other dependencies.
 
 ```shell
@@ -68,8 +73,8 @@ Successful execution should echo the following:
 
 Evinced SDK is authorized.
 
-Running 7 tests using 5 workers
-  7 passed (7.0s)
+Running 6 tests using 5 workers
+  6 passed (7.0s)
 
 To open last HTML report run:
 
