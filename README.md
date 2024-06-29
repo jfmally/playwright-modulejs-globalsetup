@@ -1,8 +1,7 @@
 # Playwright JS SDK example — globalSetup auth with JavaScript modules
 
-Playwright JS supports a Node environment using ECMAScript (JavaScript) modules.
-This example illustrates Evinced SDK usage in that context with authorization in
-a globalSetup module.
+This example illustrates Evinced Playwright JS SDK usage in a ECMAScript
+(JavaScript) module context with authorization in a globalSetup module.
 
 ## Using ECMAScript modules with Playwright JS
 
